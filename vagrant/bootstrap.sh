@@ -47,7 +47,6 @@ cp -r /vagrant/examples /home/vagrant/quorum-examples
 chown -R vagrant:vagrant /home/vagrant/quorum /home/vagrant/quorum-examples
 
 # done!
-banner "Quorum"
+banner "Sicoob"
 echo
-echo 'The Quorum vagrant instance has been provisioned. Examples are available in ~/quorum-examples inside the instance.'
-echo "Use 'vagrant ssh' to open a terminal, 'vagrant suspend' to stop the instance, and 'vagrant destroy' to remove it."
+echo 'The Quorum vagrant instance has been provisioned.'

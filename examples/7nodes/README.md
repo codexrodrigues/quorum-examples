@@ -22,9 +22,9 @@ We can inspect any of the Quorum nodes by using `geth attach` to open the Geth J
 It is recommended to use separate terminal windows for each node we are inspecting.  In each terminal, ensure you are in the `path/to/7nodes` directory, then:
 
 - If you aren't already running the 7nodes example, in terminal 1 run `./{consensus}-init.sh` followed by `./{consensus}-start.sh`
-- In terminal 1 run `geth attach ipc:qdata/dd1/geth.ipc` to attach to node 1
-- In terminal 2 run `geth attach ipc:qdata/dd4/geth.ipc` to attach to node 4
-- In terminal 3 run `geth attach ipc:qdata/dd7/geth.ipc` to attach to node 7
+- In terminal 1 run `geth attach ipc:qdata/bancoob/geth.ipc` to attach to node 1
+- In terminal 2 run `geth attach ipc:qdata/bradesco/geth.ipc` to attach to node 4
+- In terminal 3 run `geth attach ipc:qdata/bndes/geth.ipc` to attach to node 7
 
 To look at the private transaction that was just sent, run the following command in one of the terminals:
 ```sh
@@ -130,13 +130,13 @@ In this demo we will:
 Attach to the individual nodes via `geth attach path/to/geth.ipc` and use `admin.peers` to check the connected nodes:
 
 ```
-❯ geth attach qdata/dd1/geth.ipc
+❯ geth attach qdata/bancoob/geth.ipc
 Welcome to the Geth JavaScript console!
 
 instance: Geth/v1.7.2-stable/darwin-amd64/go1.9.2
 coinbase: 0xed9d02e382b34818e88b88a309c7fe71e65f419d
 at block: 1 (Mon, 29 Oct 47909665359 22:09:51 EST)
- datadir: /Users/joel/jpm/quorum-examples/examples/7nodes/qdata/dd1
+ datadir: /Users/joel/jpm/quorum-examples/examples/7nodes/qdata/bancoob
  modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 raft:1.0 rpc:1.0 txpool:1.0 web3:1.0
 
 > admin.peers
@@ -196,8 +196,8 @@ To run the example with 5 nodes instead of 7, the following changes need to be m
  
     Comment out the following lines used to start Quorum nodes 6 & 7
    ```sh
-   # PRIVATE_CONFIG=qdata/c6/tm.ipc nohup geth --datadir qdata/dd6 $ARGS --raftport 50406 --rpcport 22005 --port 21005 --unlock 0 --password passwords.txt 2>>qdata/logs/6.log &
-   # PRIVATE_CONFIG=qdata/c7/tm.ipc nohup geth --datadir qdata/dd7 $ARGS --raftport 50407 --rpcport 22006 --port 21006 --unlock 0 --password passwords.txt 2>>qdata/logs/7.log &
+   # PRIVATE_CONFIG=qdata/c6/tm.ipc nohup geth --datadir qdata/safra $ARGS --raftport 50406 --rpcport 22005 --port 21005 --unlock 0 --password passwords.txt 2>>qdata/logs/6.log &
+   # PRIVATE_CONFIG=qdata/c7/tm.ipc nohup geth --datadir qdata/bndes $ARGS --raftport 50407 --rpcport 22006 --port 21006 --unlock 0 --password passwords.txt 2>>qdata/logs/7.log &
    ```
 
 1. In __`constellation-start.sh`__ or __`tessera-start.sh`__ (depending on which privacy manager you are using): 

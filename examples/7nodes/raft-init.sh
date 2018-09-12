@@ -2,63 +2,64 @@
 set -u
 set -e
 
-echo "[*] Cleaning up temporary data directories"
+banner "Quorum"
+
 rm -rf qdata
 mkdir -p qdata/logs
 
-echo "[*] Configuring node 1 (permissioned)"
-mkdir -p qdata/dd1/{keystore,geth}
-cp permissioned-nodes.json qdata/dd1/static-nodes.json
-cp permissioned-nodes.json qdata/dd1/
-cp keys/key1 qdata/dd1/keystore
-cp raft/nodekey1 qdata/dd1/geth/nodekey
-geth --datadir qdata/dd1 init genesis.json
+echo "[*] Sicoob - Sistema de Cooperativas de Crédito do Brasil (permissioned)"
+mkdir -p qdata/bancoob/{keystore,geth}
+cp permissioned-nodes.json qdata/bancoob/static-nodes.json
+cp permissioned-nodes.json qdata/bancoob/
+cp keys/key1 qdata/bancoob/keystore
+cp raft/nodekey1 qdata/bancoob/geth/nodekey
+geth --permissioned --datadir qdata/bancoob --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*"  init genesis.json
 
-echo "[*] Configuring node 2 (permissioned)"
-mkdir -p qdata/dd2/{keystore,geth}
-cp permissioned-nodes.json qdata/dd2/static-nodes.json
-cp permissioned-nodes.json qdata/dd2/
-cp keys/key2 qdata/dd2/keystore
-cp raft/nodekey2 qdata/dd2/geth/nodekey
-geth --datadir qdata/dd2 init genesis.json
+echo "[*] Banco do Brasil (permissioned)"
+mkdir -p qdata/bb/{keystore,geth}
+cp permissioned-nodes.json qdata/bb/static-nodes.json
+cp permissioned-nodes.json qdata/bb/
+cp keys/key2 qdata/bb/keystore
+cp raft/nodekey2 qdata/bb/geth/nodekey
+geth --permissioned --datadir qdata/bb --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*"  init genesis.json
 
-echo "[*] Configuring node 3 (permissioned)"
-mkdir -p qdata/dd3/{keystore,geth}
-cp permissioned-nodes.json qdata/dd3/static-nodes.json
-cp permissioned-nodes.json qdata/dd3/
-cp keys/key6 qdata/dd3/keystore
-cp keys/key3 qdata/dd3/keystore
-cp raft/nodekey3 qdata/dd3/geth/nodekey
-geth --datadir qdata/dd3 init genesis.json
+echo "[*] Santander (permissioned)"
+mkdir -p qdata/santander/{keystore,geth}
+cp permissioned-nodes.json qdata/santander/static-nodes.json
+cp permissioned-nodes.json qdata/santander/
+cp keys/key6 qdata/santander/keystore
+cp keys/key3 qdata/santander/keystore
+cp raft/nodekey3 qdata/santander/geth/nodekey
+geth --permissioned --datadir qdata/santander --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*"  init genesis.json
 
-echo "[*] Configuring node 4 (permissioned)"
-mkdir -p qdata/dd4/{keystore,geth}
-cp permissioned-nodes.json qdata/dd4/static-nodes.json
-cp permissioned-nodes.json qdata/dd4/
-cp keys/key4 qdata/dd4/keystore
-cp raft/nodekey4 qdata/dd4/geth/nodekey
-geth --datadir qdata/dd4 init genesis.json
+echo "[*] Bradesco (permissioned)"
+mkdir -p qdata/bradesco/{keystore,geth}
+cp permissioned-nodes.json qdata/bradesco/static-nodes.json
+cp permissioned-nodes.json qdata/bradesco/
+cp keys/key4 qdata/bradesco/keystore
+cp raft/nodekey4 qdata/bradesco/geth/nodekey
+geth --permissioned --datadir qdata/bradesco --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*"  init genesis.json
 
-echo "[*] Configuring node 5"
-mkdir -p qdata/dd5/{keystore,geth}
-cp permissioned-nodes.json qdata/dd5/static-nodes.json
-cp keys/key5 qdata/dd5/keystore
-cp raft/nodekey5 qdata/dd5/geth/nodekey
-geth --datadir qdata/dd5 init genesis.json
+echo "[*] Caixa Econômica Federal"
+mkdir -p qdata/caixa/{keystore,geth}
+cp all-nodes.json qdata/caixa/static-nodes.json
+cp keys/key5 qdata/caixa/keystore
+cp raft/nodekey5 qdata/caixa/geth/nodekey
+geth --datadir qdata/caixa --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*"  init genesis.json
 
-echo "[*] Configuring node 6"
-mkdir -p qdata/dd6/{keystore,geth}
-cp permissioned-nodes.json qdata/dd6/static-nodes.json
-cp raft/nodekey6 qdata/dd6/geth/nodekey
-cp keys/key7 qdata/dd6/keystore
-geth --datadir qdata/dd6 init genesis.json
+echo "[*] Safra"
+mkdir -p qdata/safra/{keystore,geth}
+cp all-nodes.json qdata/safra/static-nodes.json
+cp raft/nodekey6 qdata/safra/geth/nodekey
+cp keys/key7 qdata/safra/keystore
+geth --datadir qdata/safra --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*"  init genesis.json
 
-echo "[*] Configuring node 7"
-mkdir -p qdata/dd7/{keystore,geth}
-cp permissioned-nodes.json qdata/dd7/static-nodes.json
-cp raft/nodekey7 qdata/dd7/geth/nodekey
-cp keys/key8 qdata/dd7/keystore
-geth --datadir qdata/dd7 init genesis.json
+echo "[*] BNDES Banco Nacional de Desenvolvimento Econômico e Social "
+mkdir -p qdata/bndes/{keystore,geth}
+cp all-nodes.json qdata/bndes/static-nodes.json
+cp raft/nodekey7 qdata/bndes/geth/nodekey
+cp keys/key8 qdata/bndes/keystore
+geth --datadir qdata/bndes --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*"  init genesis.json
 
 #Initialise Tessera configuration
 ./tessera-init.sh

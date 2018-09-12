@@ -7,60 +7,60 @@ rm -rf qdata
 mkdir -p qdata/logs
 
 echo "[*] Configuring node 1"
-mkdir -p qdata/dd1/{keystore,geth}
-cp permissioned-nodes.json qdata/dd1/static-nodes.json
-cp permissioned-nodes.json qdata/dd1/
-cp keys/key1 qdata/dd1/keystore
-cp raft/nodekey1 qdata/dd1/geth/nodekey
-geth --datadir qdata/dd1 init istanbul-genesis.json
+mkdir -p qdata/bancoob/{keystore,geth}
+cp permissioned-nodes.json qdata/bancoob/static-nodes.json
+cp permissioned-nodes.json qdata/bancoob/
+cp keys/key1 qdata/bancoob/keystore
+cp raft/nodekey1 qdata/bancoob/geth/nodekey
+geth --datadir qdata/bancoob init istanbul-genesis.json
 
 echo "[*] Configuring node 2"
-mkdir -p qdata/dd2/{keystore,geth}
-cp permissioned-nodes.json qdata/dd2/static-nodes.json
-cp permissioned-nodes.json qdata/dd2/
-cp keys/key2 qdata/dd2/keystore
-cp raft/nodekey2 qdata/dd2/geth/nodekey
-geth --datadir qdata/dd2 init istanbul-genesis.json
+mkdir -p qdata/bb/{keystore,geth}
+cp permissioned-nodes.json qdata/bb/static-nodes.json
+cp permissioned-nodes.json qdata/bb/
+cp keys/key2 qdata/bb/keystore
+cp raft/nodekey2 qdata/bb/geth/nodekey
+geth --datadir qdata/bb init istanbul-genesis.json
 
 echo "[*] Configuring node 3"
-mkdir -p qdata/dd3/{keystore,geth}
-cp permissioned-nodes.json qdata/dd3/static-nodes.json
-cp permissioned-nodes.json qdata/dd3/
-cp keys/key3 qdata/dd3/keystore
-cp raft/nodekey3 qdata/dd3/geth/nodekey
-geth --datadir qdata/dd3 init istanbul-genesis.json
+mkdir -p qdata/santander/{keystore,geth}
+cp permissioned-nodes.json qdata/santander/static-nodes.json
+cp permissioned-nodes.json qdata/santander/
+cp keys/key3 qdata/santander/keystore
+cp raft/nodekey3 qdata/santander/geth/nodekey
+geth --datadir qdata/santander init istanbul-genesis.json
 
 echo "[*] Configuring node 4 as voter"
-mkdir -p qdata/dd4/{keystore,geth}
-cp permissioned-nodes.json qdata/dd4/static-nodes.json
-cp permissioned-nodes.json qdata/dd4/
-cp keys/key4 qdata/dd4/keystore
-cp raft/nodekey4 qdata/dd4/geth/nodekey
-geth --datadir qdata/dd4 init istanbul-genesis.json
+mkdir -p qdata/bradesco/{keystore,geth}
+cp permissioned-nodes.json qdata/bradesco/static-nodes.json
+cp permissioned-nodes.json qdata/bradesco/
+cp keys/key4 qdata/bradesco/keystore
+cp raft/nodekey4 qdata/bradesco/geth/nodekey
+geth --datadir qdata/bradesco init istanbul-genesis.json
 
 echo "[*] Configuring node 5 as voter"
-mkdir -p qdata/dd5/{keystore,geth}
-cp permissioned-nodes.json qdata/dd5/static-nodes.json
-cp permissioned-nodes.json qdata/dd5/
-cp keys/key5 qdata/dd5/keystore
-cp raft/nodekey5 qdata/dd5/geth/nodekey
-geth --datadir qdata/dd5 init istanbul-genesis.json
+mkdir -p qdata/caixa/{keystore,geth}
+cp permissioned-nodes.json qdata/caixa/static-nodes.json
+cp permissioned-nodes.json qdata/caixa/
+cp keys/key5 qdata/caixa/keystore
+cp raft/nodekey5 qdata/caixa/geth/nodekey
+geth --datadir qdata/caixa init istanbul-genesis.json
 
 echo "[*] Configuring node 6"
-mkdir -p qdata/dd6/{keystore,geth}
-cp permissioned-nodes.json qdata/dd6/static-nodes.json
-cp permissioned-nodes.json qdata/dd6/
-cp keys/key6 qdata/dd6/keystore
-cp raft/nodekey6 qdata/dd6/geth/nodekey
-geth --datadir qdata/dd6 init istanbul-genesis.json
+mkdir -p qdata/safra/{keystore,geth}
+cp permissioned-nodes.json qdata/safra/static-nodes.json
+cp permissioned-nodes.json qdata/safra/
+cp keys/key6 qdata/safra/keystore
+cp raft/nodekey6 qdata/safra/geth/nodekey
+geth --datadir qdata/safra init istanbul-genesis.json
 
 echo "[*] Configuring node 7"
-mkdir -p qdata/dd7/{keystore,geth}
-cp permissioned-nodes.json qdata/dd7/static-nodes.json
-cp permissioned-nodes.json qdata/dd7/
-cp keys/key7 qdata/dd7/keystore
-cp raft/nodekey7 qdata/dd7/geth/nodekey
-geth --datadir qdata/dd7 init istanbul-genesis.json
+mkdir -p qdata/bndes/{keystore,geth}
+cp permissioned-nodes.json qdata/bndes/static-nodes.json
+cp permissioned-nodes.json qdata/bndes/
+cp keys/key7 qdata/bndes/keystore
+cp raft/nodekey7 qdata/bndes/geth/nodekey
+geth --datadir qdata/bndes init istanbul-genesis.json
 
 #Initialise Tessera configuration
 ./tessera-init.sh
